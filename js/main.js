@@ -159,56 +159,125 @@
 // hw 3
 
 // task 1
-let i = 0;
-let bananas_count = +prompt('Введите количество бананчиков');
-while (i < bananas_count) {
-    i++
-    if (bananas_count == 1 || i == 1) {
-        console.log('1 banana');
-    }
-
-    else {
-        console.log(`${i} bananas`);
-    }
-}
+// let i = 0;
+// let bananas_count = +prompt('Введите количество бананчиков');
+// while (i < bananas_count) {
+//     i++
+//     if (bananas_count == 1 || i == 1) {
+//         console.log('1 banana');
+//     }
+//
+//     else {
+//         console.log(`${i} bananas`);
+//     }
+// }
 
 // task 2
-let number = +prompt("Введите любое число");
-let sum_of_even_nums = 0;
+// let number = +prompt("Введите любое число");
+// let sum_of_even_nums = 0;
+//
+// if (isNaN(number)) {
+//   alert("Надо ввести int, а не str");
+// } else {
+//   for (let i = 0; i <= number; i++) {
+//     if (i % 2 == 0) {
+//       sum_of_even_nums += i;
+//     }
+//   }
+//
+//   console.log(
+//     `Сумма четных чисел в промежутке от 0 до ${number}: ${sum_of_even_nums}`
+//   );
+// }
+//
+//
+// // task 3
+//
+// let num = +prompt('Введите число');
+// let degree = +prompt('Введите степень');
+// let result = 1;
+// if (isNaN(degree) || degree == 0) {
+//     degree = 2
+// }
+//
+// for (let i = 0; i < degree; i++) {
+//     if (isNaN(num) || num == 0) {
+//         alert('Вы ввели 0 или str, а надо int');
+//         result = 'Ошибка'
+//         break
+//     }
+//     else {
+//     result = result * num }
+//
+// }
+//
+// alert(`Ваш результат: ${result}`)
 
-if (isNaN(number)) {
-  alert("Надо ввести int, а не str");
-} else {
-  for (let i = 0; i <= number; i++) {
-    if (i % 2 == 0) {
-      sum_of_even_nums += i;
+
+// hw 4
+
+// task 1
+current_year = +prompt('Введите текущий год')
+name = prompt('Введите ваше имя')
+birth_year = prompt('Введите ваш год рождения')
+
+function return_info(current_year, name, birth_year) {
+    user_age = (current_year - birth_year);
+    return `${name}, Ваш возраст ${user_age}`
+}
+
+alert(return_info(current_year, name, birth_year))
+
+// task 2
+
+function rand(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function randomOperator() {
+    let max = 4
+    let min = 1
+    randomOp = Math.floor(Math.random() * (max - min + 1)) + min;
+    if (randomOp === 1) {
+        return '+'
+    } else if (randomOp === 2) {
+        return '-'
+    } else if (randomOp === 3) {
+        return '/'
+    } else if (randomOp === 4) {
+        return '*'
     }
-  }
-
-  console.log(
-    `Сумма четных чисел в промежутке от 0 до ${number}: ${sum_of_even_nums}`
-  );
 }
 
 
-// task 3
-
-let num = +prompt('Введите число');
-let degree = +prompt('Введите степень');
-let result = 1;
-if (isNaN(degree) || degree == 0) {
-    degree = 2
-}
-
-for (let i = 0; i < degree; i++) {
-    if (isNaN(num) || num == 0) {
-        alert('Вы ввели 0 или str, а надо int');
-        result = 'Ошибка'
-        break
+let minNumber = +prompt('Введите минимальный диапазон')
+let maxNumber = +prompt('Введите максимальный диапазон')
+let tasksQuantity = +prompt('Введите кол-во примеров которое хотите получить');
+for (let i = 0; i < tasksQuantity; i++) {
+    let firstNum = rand(minNumber, maxNumber)
+    let secondNum = rand(minNumber, maxNumber)
+    let solve = 0;
+    let operator = randomOperator()
+    switch (operator) {
+        case '+':
+            solve = (firstNum + secondNum)
+            console.log(solve)
+            break
+        case '-':
+            solve = (firstNum - secondNum)
+            console.log(solve)
+            break
+        case '/':
+            solve = (secondNum / secondNum)
+            console.log(solve)
+            break
+        case '*':
+            solve = (firstNum * secondNum)
+            console.log(solve)
+            break
     }
-    else {
-    result = result * num }
-
+    let task = (`${firstNum} ${operator} ${secondNum}`)
+    let answer = +prompt(`${task}`)
+    let word = answer === solve ? 'Молодец' : 'Холодец'
+    alert(`${task} = ${solve}. Ваш ответ: ${answer}. Вы ${word}`)
 }
-
-alert(`Ваш результат: ${result}`)
