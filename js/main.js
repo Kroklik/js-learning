@@ -283,8 +283,8 @@
 // }
 
 // hw5
+// task 1
 
-//task 1
 userObject = {
 
 }
@@ -301,3 +301,60 @@ for (let i = 1; i <= 10; i++) {
     console.log(`Имя: ${name}`)
     console.log(`Возраст: ${age}`)
 }
+
+// hw 6
+// task 1
+
+let cht = []
+let ncht = []
+let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+for (let i of array) {
+    if (i % 2 === 0) {
+        cht.push(i)
+    } else {
+        ncht.push(i)
+    }
+}
+
+console.log(`Четные ${cht}`)
+console.log(`Не четные ${ncht}`)
+
+myList = []
+
+for (let i = 0; i < Infinity; i++) {
+    let word = prompt('Введите команду')
+
+    function check_add_del_or_empty() {
+        if (word.startsWith('add, ')) {
+            return 'add'
+        } else if (word.startsWith('del, ')) {
+            return 'del'
+        } else {
+            return 'empty'
+        }
+    }
+
+    let func = check_add_del_or_empty()
+
+    if (word === 'stop') {
+        break
+    }
+
+    if (func === 'add') {
+        let adding_word = word.split('add, ')[1]
+        myList.push(adding_word)
+    }
+    else if (func === 'del') {
+        let deleting_word = word.split('del, ')[1];
+        let index = myList.indexOf(deleting_word); // Метод indexOf я нашел в интернете.
+        if (index !== -1)  {
+            myList.splice(index, 1)
+        }
+        // также посмотрел что indexOf возвращает -1 если он ничего не найдет
+    }
+    else {
+        alert('Вы не ввели add или del')
+    }
+    console.log(myList)
+}
+
