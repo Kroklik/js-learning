@@ -217,67 +217,87 @@
 // hw 4
 
 // task 1
-current_year = +prompt('Введите текущий год')
-name = prompt('Введите ваше имя')
-birth_year = prompt('Введите ваш год рождения')
+// current_year = +prompt('Введите текущий год')
+// name = prompt('Введите ваше имя')
+// birth_year = prompt('Введите ваш год рождения')
+//
+// function return_info(current_year, name, birth_year) {
+//     user_age = (current_year - birth_year);
+//     return `${name}, Ваш возраст ${user_age}`
+// }
+//
+// alert(return_info(current_year, name, birth_year))
+//
+// // task 2
+//
+// function rand(min, max) {
+//     return Math.floor(Math.random() * (max - min + 1)) + min;
+// }
+//
+// function randomOperator() {
+//     let max = 4
+//     let min = 1
+//     randomOp = Math.floor(Math.random() * (max - min + 1)) + min;
+//     if (randomOp === 1) {
+//         return '+'
+//     } else if (randomOp === 2) {
+//         return '-'
+//     } else if (randomOp === 3) {
+//         return '/'
+//     } else if (randomOp === 4) {
+//         return '*'
+//     }
+// }
+//
+//
+// let minNumber = +prompt('Введите минимальный диапазон')
+// let maxNumber = +prompt('Введите максимальный диапазон')
+// let tasksQuantity = +prompt('Введите кол-во примеров которое хотите получить');
+// for (let i = 0; i < tasksQuantity; i++) {
+//     let firstNum = rand(minNumber, maxNumber)
+//     let secondNum = rand(minNumber, maxNumber)
+//     let solve = 0;
+//     let operator = randomOperator()
+//     switch (operator) {
+//         case '+':
+//             solve = (firstNum + secondNum)
+//             console.log(solve)
+//             break
+//         case '-':
+//             solve = (firstNum - secondNum)
+//             console.log(solve)
+//             break
+//         case '/':
+//             solve = (secondNum / secondNum)
+//             console.log(solve)
+//             break
+//         case '*':
+//             solve = (firstNum * secondNum)
+//             console.log(solve)
+//             break
+//     }
+//     let task = (`${firstNum} ${operator} ${secondNum}`)
+//     let answer = +prompt(`${task}`)
+//     let word = answer === solve ? 'Молодец' : 'Холодец'
+//     alert(`${task} = ${solve}. Ваш ответ: ${answer}. Вы ${word}`)
+// }
 
-function return_info(current_year, name, birth_year) {
-    user_age = (current_year - birth_year);
-    return `${name}, Ваш возраст ${user_age}`
+// hw5
+
+//task 1
+userObject = {
+
 }
 
-alert(return_info(current_year, name, birth_year))
-
-// task 2
-
-function rand(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function randomOperator() {
-    let max = 4
-    let min = 1
-    randomOp = Math.floor(Math.random() * (max - min + 1)) + min;
-    if (randomOp === 1) {
-        return '+'
-    } else if (randomOp === 2) {
-        return '-'
-    } else if (randomOp === 3) {
-        return '/'
-    } else if (randomOp === 4) {
-        return '*'
+for (let i = 1; i <= 10; i++) {
+    let name = prompt("Введите имя");
+    let age = prompt('Сколько вам лет');
+    userObject[i] = {
+        age: age,
+        name: name,
+        id:i
     }
-}
-
-
-let minNumber = +prompt('Введите минимальный диапазон')
-let maxNumber = +prompt('Введите максимальный диапазон')
-let tasksQuantity = +prompt('Введите кол-во примеров которое хотите получить');
-for (let i = 0; i < tasksQuantity; i++) {
-    let firstNum = rand(minNumber, maxNumber)
-    let secondNum = rand(minNumber, maxNumber)
-    let solve = 0;
-    let operator = randomOperator()
-    switch (operator) {
-        case '+':
-            solve = (firstNum + secondNum)
-            console.log(solve)
-            break
-        case '-':
-            solve = (firstNum - secondNum)
-            console.log(solve)
-            break
-        case '/':
-            solve = (secondNum / secondNum)
-            console.log(solve)
-            break
-        case '*':
-            solve = (firstNum * secondNum)
-            console.log(solve)
-            break
-    }
-    let task = (`${firstNum} ${operator} ${secondNum}`)
-    let answer = +prompt(`${task}`)
-    let word = answer === solve ? 'Молодец' : 'Холодец'
-    alert(`${task} = ${solve}. Ваш ответ: ${answer}. Вы ${word}`)
+    console.log(`Пользователь: ${i}`)
+    console.log(`Имя: ${name}`)
+    console.log(`Возраст: ${age}`)
 }
