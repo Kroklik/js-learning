@@ -3,24 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body {
-
-  background: linear-gradient(135deg, #ff7e5f, #feb47b);
-  height: 100vh;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: Arial, sans-serif;
-  color: white;
-  text-align: center;
-}
-    </style>
+    <title>Template Layout</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
-    <script src="js/main.js"></script>
+<div class="container">
+    <div class="palette-container">
+        <!-- Первая палитра -->
+        <div class="palette palette1">
+            <div class="color color-red"></div>
+            <div class="color color-yellow"></div>
+            <div class="color color-blue"></div>
+            <div class="color color-black"></div>
+            <div class="close close-palette1">X</div>
+        </div>
+
+        <!-- Вторая палитра -->
+        <div class="palette palette2">
+            <div class="color color-green"></div>
+            <div class="color color-purple"></div>
+            <div class="color color-orange"></div>
+            <div class="color color-pink"></div>
+            <div class="close close-palette2">X</div>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</div>
+<script src="js/main.js"></script>
 </body>
 </html>

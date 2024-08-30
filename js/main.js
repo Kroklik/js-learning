@@ -285,76 +285,124 @@
 // hw5
 // task 1
 
-userObject = {
-
-}
-
-for (let i = 1; i <= 10; i++) {
-    let name = prompt("Введите имя");
-    let age = prompt('Сколько вам лет');
-    userObject[i] = {
-        age: age,
-        name: name,
-        id:i
-    }
-    console.log(`Пользователь: ${i}`)
-    console.log(`Имя: ${name}`)
-    console.log(`Возраст: ${age}`)
-}
+// userObject = {
+//
+// }
+//
+// for (let i = 1; i <= 10; i++) {
+//     let name = prompt("Введите имя");
+//     let age = prompt('Сколько вам лет');
+//     userObject[i] = {
+//         age: age,
+//         name: name,
+//         id:i
+//     }
+//     console.log(`Пользователь: ${i}`)
+//     console.log(`Имя: ${name}`)
+//     console.log(`Возраст: ${age}`)
+// }
 
 // hw 6
 // task 1
 
-let cht = []
-let ncht = []
-let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-for (let i of array) {
-    if (i % 2 === 0) {
-        cht.push(i)
-    } else {
-        ncht.push(i)
-    }
-}
+// let cht = []
+// let ncht = []
+// let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+// for (let i of array) {
+//     if (i % 2 === 0) {
+//         cht.push(i)
+//     } else {
+//         ncht.push(i)
+//     }
+// }
+//
+// console.log(`Четные ${cht}`)
+// console.log(`Не четные ${ncht}`)
+//
+// myList = []
+//
+// for (let i = 0; i < Infinity; i++) {
+//     let word = prompt('Введите команду')
+//
+//     function check_add_del_or_empty() {
+//         if (word.startsWith('add, ')) {
+//             return 'add'
+//         } else if (word.startsWith('del, ')) {
+//             return 'del'
+//         } else {
+//             return 'empty'
+//         }
+//     }
+//
+//     let func = check_add_del_or_empty()
+//
+//     if (word === 'stop') {
+//         break
+//     }
+//
+//     if (func === 'add') {
+//         let adding_word = word.split('add, ')[1]
+//         myList.push(adding_word)
+//     }
+//     else if (func === 'del') {
+//         let deleting_word = word.split('del, ')[1];
+//         let index = myList.indexOf(deleting_word); // Метод indexOf я нашел в интернете.
+//         if (index !== -1)  {
+//             myList.splice(index, 1)
+//         }
+//         // также посмотрел что indexOf возвращает -1 если он ничего не найдет
+//     }
+//     else {
+//         alert('Вы не ввели add или del')
+//     }
+//     console.log(myList)
+// }
+//
 
-console.log(`Четные ${cht}`)
-console.log(`Не четные ${ncht}`)
+// Получаем элементы body и палитры
+const body = document.querySelector('body');
+const palette1 = document.querySelector('.palette1');
+const palette2 = document.querySelector('.palette2');
+const pallette_1_colors = palette1.querySelectorAll('.color')
+const pallette_2_colors = palette2.querySelectorAll('.color')
+const close_1 = palette1.querySelector('.close');
+const close_2 = palette2.querySelector('.close');
+const squares = document.querySelectorAll('.box');
 
-myList = []
-
-for (let i = 0; i < Infinity; i++) {
-    let word = prompt('Введите команду')
-
-    function check_add_del_or_empty() {
-        if (word.startsWith('add, ')) {
-            return 'add'
-        } else if (word.startsWith('del, ')) {
-            return 'del'
-        } else {
-            return 'empty'
+pallette_1_colors.forEach(div => {
+    div.addEventListener('click', () => {
+        body.classList.remove('color-red', 'color-yellow', 'color-blue', 'color-black', 'color-white');
+        if (div.classList.contains('color-red')) {
+            body.classList.add('color-red');
+        } else if (div.classList.contains('color-yellow')) {
+            body.classList.add('color-yellow');
+        } else if (div.classList.contains('color-blue')) {
+            body.classList.add('color-blue');
+        } else if (div.classList.contains('color-black')) {
+            body.classList.add('color-black');
         }
-    }
+    });
+});
 
-    let func = check_add_del_or_empty()
+close_1.addEventListener('click', () => {
+    body.classList.add('color-white');
+})
 
-    if (word === 'stop') {
-        break
-    }
-
-    if (func === 'add') {
-        let adding_word = word.split('add, ')[1]
-        myList.push(adding_word)
-    }
-    else if (func === 'del') {
-        let deleting_word = word.split('del, ')[1];
-        let index = myList.indexOf(deleting_word); // Метод indexOf я нашел в интернете.
-        if (index !== -1)  {
-            myList.splice(index, 1)
+pallette_2_colors.forEach(div => {
+    div.addEventListener('click', () => {
+        squares.forEach(square => {square.classList.remove('color-green', 'color-purple', 'color-orange', 'color-pink', 'color-white')})
+        if (div.classList.contains('color-green')) {
+            squares.forEach((square) => {square.classList.toggle('color-green')})
+        }else if (div.classList.contains('color-purple')) {
+            squares.forEach((square) => {square.classList.toggle('color-purple')})
+        }else if (div.classList.contains('color-orange')) {
+            squares.forEach((square) => {square.classList.toggle('color-orange')})
+        }else if (div.classList.contains('color-pink')) {
+            squares.forEach((square) => {square.classList.toggle('color-pink')})
         }
-        // также посмотрел что indexOf возвращает -1 если он ничего не найдет
-    }
-    else {
-        alert('Вы не ввели add или del')
-    }
-    console.log(myList)
-}
+    });
+});
 
+close_2.addEventListener('click', () => {
+    squares.forEach((square) => {square.classList.toggle('color-white')})
+})

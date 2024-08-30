@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #E0E0E0, #FFFFFF);
+}
+
+.container {
+    display: flex;
+    align-items: start;
+    gap: 20px;
+    width: 80%;
+    height: 80%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.palette-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.palette {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.color {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Стили для первой палитры */
+.color-red { background: red; }
+.color-yellow { background: yellow; }
+.color-blue { background: blue; }
+.color-black { background: black; }
+
+.close-palette1 {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Стили для второй палитры */
+.color-green { background: green; }
+.color-purple { background: purple; }
+.color-orange { background: orange; }
+.color-pink { background: pink; }
+.color-white {background: white}
+
+.close-palette2 {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.box {
+    border: 2px solid black;
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+}
