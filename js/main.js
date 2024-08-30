@@ -373,13 +373,13 @@ pallette_1_colors.forEach(div => {
     div.addEventListener('click', () => {
         body.classList.remove('color-red', 'color-yellow', 'color-blue', 'color-black', 'color-white');
         if (div.classList.contains('color-red')) {
-            body.classList.add('color-red');
+            body.classList.toggle('color-red');
         } else if (div.classList.contains('color-yellow')) {
-            body.classList.add('color-yellow');
+            body.classList.toggle('color-yellow');
         } else if (div.classList.contains('color-blue')) {
-            body.classList.add('color-blue');
+            body.classList.toggle('color-blue');
         } else if (div.classList.contains('color-black')) {
-            body.classList.add('color-black');
+            body.classList.toggle('color-black');
         }
     });
 });
